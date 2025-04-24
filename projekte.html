@@ -1,0 +1,65 @@
+
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projekte – E-J Workspace</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="assets/Favicon.png" />
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo-title">
+        <img src="assets/E-J Logo groß.png" alt="E-J Workspace Logo" class="logo" />
+        <span class="site-title">E-J Workspace</span>
+      </div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projekte.html" class="active">Projekte</a></li>
+      </ul>
+      <div class="nav-right">
+        <button id="darkModeToggle" aria-label="Dark Mode Toggle">
+          <img id="darkModeIcon" src="assets/darkmode.png" alt="Toggle Dark Mode" style="height: 24px;" />
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="projects">
+      <h2>🚀 Projekte</h2>
+      <div class="project">
+        <h3><img src="assets/Studium Logo animiert.gif" alt="Studi-Community Logo" style="height: 1.2em; vertical-align: middle; margin-right: 0.5rem;" />Studi-Community</h3>
+        <p>Unsere Discord-Community für Studierende mit Fokus auf Produktivität, Austausch & Tools für den Studienalltag.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 E-J Workspace</p>
+    <a href="https://discord.gg/PpbYWbmY" target="_blank" rel="noopener" aria-label="Join us on Discord">
+      <img src="assets/discord-logo.png" alt="Discord" style="height: 28px; cursor: pointer;" />
+    </a>
+  </footer>
+
+  <script>
+    const darkToggle = document.getElementById('darkModeToggle');
+    const icon = document.getElementById('darkModeIcon');
+
+    const updateIcon = () => {
+      const dark = document.body.classList.contains('dark-mode');
+      icon.src = dark ? 'assets/lightmode.png' : 'assets/darkmode.png';
+    };
+
+    darkToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      updateIcon();
+    });
+
+    updateIcon();
+  </script>
+</body>
+</html>
