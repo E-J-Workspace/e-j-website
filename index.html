@@ -12,85 +12,83 @@
   <header>
     <nav>
       <div class="logo-title">
-        <img src="assets/E-J Logo groß.png" alt="E-J Workspace Logo" class="logo" />
-        <span class="site-title">E-J Workspace</span>
+        <img src="assets/E-J Logo groß.png" alt="E-J Workspace Logo" class="logo floating-logo" />
       </div>
-      <button class="menu-toggle" aria-label="Menü öffnen">&#9776;</button>
       <ul>
         <li><a href="projekte.html">Projekte</a></li>
         <li><a href="#challenges">Monthly Challenges</a></li>
       </ul>
-      <button id="darkModeToggle" aria-label="Dark Mode Toggle">
-        <img id="darkModeIcon" src="assets/darkmode.png" alt="Toggle Dark Mode" style="height: 24px;" />
-      </button>
     </nav>
   </header>
 
   <section id="hero" class="reveal">
     <div class="hero-content">
-      <h2>Dashboard</h2>
+      <div style="position: relative; display: inline-block;">
+        <img src="assets/E-J Logo groß rounded.png" alt="E-J Workspace Logo Rounded" class="floating-logo" />
+        <a href="https://discord.com/channels/1156253962945699850/1360190312303296593" class="notification-dot" target="_blank" rel="noopener"></a>
+      </div>
+      <h2 style="color: #dcdac0;">E-J Workspace</h2>
       <p>"Build > Talk."</p>
       <a href="https://app.clickup.com/90151074764/v/cn/7-90151074764-8" class="button" target="_blank" rel="noopener">Workspace öffnen</a>
     </div>
   </section>
 
-  <section id="team-time" class="reveal">
-    <div class="tabs">
-      <div class="tab" id="tab-janosch">
-        <h3>Janosch</h3>
-        <p class="clock" id="clock-janosch">--:-- Uhr</p>
-      </div>
-      <div class="tab" id="tab-emil">
-        <h3>Emil</h3>
-        <p class="clock" id="clock-emil">--:--</p>
-      </div>
-    </div>
-  </section>
 
-
-  <section id="challenges" class="reveal">
-    <h2>⛳️ Monthly Challenges</h2>
+  <section id="challenges" class="reveal" style="background-color: #F5EDD6; position: relative;">
+    <h2 style="text-align: left;">🎯 Monthly Challenges</h2>
     <div class="table-wrapper">
       <table>
         <thead>
           <tr>
-            <th>Place</th>
+            <th style="font-weight: bold;">Challenge</th>
             <th>Beschreibung</th>
-            <th>Dauer</th>
-            <th>Ende</th>
+            <th>Start</th>
+            <th style="font-weight: bold;">→Ende</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Discord</td>
-            <td>Bericht über Tagesablauf inkl. Tracking über die Woche verteilt</td>
-            <td>4 weeks</td>
-            <td>07.05.</td>
+            <td style="font-weight: bold;">#availability-channel</td>
+            <td>Calls besser organisiert bekommen indem man bei Discord reinschreibt, wann man Zeit hat.</td>
+            <td>15.04.</td>
+            <td style="font-weight: bold;">30.04.</td>
           </tr>
           <tr>
-            <td>Discord</td>
-            <td>Calls besser organisiert bekommen indem man reinschreibt sobald man Zeit hat</td>
-            <td>2 weeks</td>
-            <td>30.04.</td>
+            <td style="font-weight: bold;">Clickup</td>
+            <td>Neuer Workspace nur für Work und Projekte.</td>
+            <td>15.04.</td>
+            <td style="font-weight: bold;">30.04.</td>
           </tr>
           <tr>
-            <td>ClickUp</td>
-            <td>Funktionierendes System für Work</td>
-            <td>2 weeks</td>
-            <td>30.04.</td>
-          </tr>
-          <tr>
-            <td>Discord</td>
-            <td>9 pm sleep</td>
-            <td>2 weeks</td>
-            <td>06.05.</td>
+            <td style="font-weight: bold;">9 pm sleep</td>
+            <td>Zwei Wochen jeden Tag um 21 Uhr ins Bett.</td>
+            <td>21.04.</td>
+            <td style="font-weight: bold;">06.05.</td>
           </tr>
         </tbody>
       </table>
     </div>
   </section>
 
-<footer>
+
+
+  <section id="team-time" class="reveal">
+    <div class="tabs">
+      <div class="tab" id="tab-emil">
+        <img src="assets/PB Emil.png" alt="Profilbild Emil" class="profile-icon" />
+        <h3>Emil</h3>
+        <p class="clock" id="clock-emil">--:--</p>
+      </div>
+      <div class="tab janosch" id="tab-janosch">
+        <img src="assets/PB Janosch.PNG" alt="Profilbild Janosch" class="profile-icon" />
+        <h3>Janosch</h3>
+        <p class="clock" id="clock-janosch">--:-- Uhr</p>
+      </div>
+    </div>
+  </section>
+
+
+<footer style="background-color: #F4EED4; color: #333; font-size: 0.9rem; text-align: center; padding: 1rem; width: 100%; display: flex; justify-content: center; align-items: center; gap: 0.5rem; flex-direction: column; margin-top: 12rem;">
   <p>&copy; 2025 E-J Workspace</p>
   <a href="https://discord.gg/PpbYWbmY" target="_blank" rel="noopener" aria-label="Join us on Discord">
     <img src="assets/discord-logo.png" alt="Discord" style="height: 28px; cursor: pointer;">
@@ -173,21 +171,4 @@
     setInterval(updateClocks, 60000);
   </script>
 </body>
-  <script>
-    const darkToggle = document.getElementById('darkModeToggle');
-    const icon = document.getElementById('darkModeIcon');
-
-    const updateIcon = () => {
-      const dark = document.body.classList.contains('dark-mode');
-      icon.src = dark ? 'assets/lightmode.png' : 'assets/darkmode.png';
-    };
-
-    darkToggle.addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-      updateIcon();
-    });
-
-    // Optional: set correct icon on load
-    updateIcon();
-  </script>
 </html>
