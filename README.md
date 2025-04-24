@@ -1,7 +1,11 @@
 # E-J Workspace Website
 
-## Beschreibung
-Website für E-J Workspace.
+## Features
+- Time-Abzeige
+- Projekt-Übersicht
+- Links zu:
+-   Watch Together
+-   Call-Themen
 
 ## Technologie
 - HTML5
