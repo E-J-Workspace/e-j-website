@@ -229,14 +229,14 @@ footer:hover {
   transition: background-color 0.3s ease;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .menu-toggle {
     display: block;
-  }
-
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
   }
 
   nav ul {
@@ -244,16 +244,97 @@ footer:hover {
     width: 100%;
     flex-direction: column;
     gap: 0.5rem;
-    background-color: #111;
-    padding: 0.5rem 0;
+    background-color: #FFFFEC;
+    padding: 1rem 0;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    z-index: 100;
   }
 
   nav ul.open {
     display: flex;
   }
 
+  nav a {
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+    color: #333;
+    text-align: center;
+  }
+
   nav ul li {
-    padding: 0.5rem 1rem;
+    width: 100%;
+  }
+
+  /* Hero image adjustments for mobile */
+  #hero {
+    max-width: 90%;
+    margin-top: 4rem;
+    padding: 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  /* Adjust text size in hero */
+  #hero h2 {
+    font-size: 1.6rem;
+  }
+
+  #hero p {
+    font-size: 1rem;
+  }
+
+  /* Make section padding smaller on mobile */
+  section {
+    padding: 4rem 1rem;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 5rem;
+  }
+
+  footer a img {
+    height: 35px;
+  }
+
+  /* Adjust tabs for mobile */
+  .tab {
+    padding: 0.8rem;
+  }
+
+  /* Stack elements in the team-time section */
+  #team-time {
+    position: relative;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  /* Ensure the tabs don't overlap or overflow */
+  .tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 600px) {
+  .site-title {
+    font-size: 1.5rem; /* Smaller site title on mobile */
+  }
+
+  .logo {
+    height: 40px; /* Resize logo for mobile */
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   section, #hero {
