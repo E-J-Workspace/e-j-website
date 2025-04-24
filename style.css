@@ -1,6 +1,6 @@
 /* Basic Reset */
 :root {
-  --color-primary: #6492B5;
+  --color-primary: #000000;
   --color-accent: #EE7C36;
 }
 * {
@@ -567,4 +567,13 @@ p {
 }
 .tab.janosch h3 {
   color: #EE8432;
+}
+
+.tab#tab-emil h3 {
+  color: #6492B5;
+}
+
+#projects {
+  display: block;
+  opacity: 1;
 }
