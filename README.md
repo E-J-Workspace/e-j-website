@@ -33,4 +33,4 @@ Icons, Logos und animierte Elemente liegen im Ordner `/assets`.
 
 ## 🤝 Credits
 
-Built by [Emil]() & [Janosch](https://github.com/Devnosch)  
+Built by [Emil](https://github.com/emilmeggle) & [Janosch](https://github.com/Devnosch)  
