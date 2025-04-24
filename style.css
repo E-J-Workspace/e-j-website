@@ -131,7 +131,7 @@ section.visible {
 
 #hero {
   max-width: 480px;
-  margin: 6rem auto 6rem; /* Erhöht den Abstand oben */
+  margin: 7rem auto 7rem; /* Erhöht den Abstand oben */
   padding: 2rem 1.5rem;
   background-color: #111;
   color: #fff;

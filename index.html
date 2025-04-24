@@ -7,12 +7,57 @@
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="assets/Favicon.png">
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <style>
+    /* Menü verstecken auf mobilen Geräten */
+    nav ul {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    /* Auf mobilen Geräten wird das Menü verborgen */
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #FFFFEC;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        padding: 1rem;
+      }
+
+      /* Menu toggle wird angezeigt auf mobilen Geräten */
+      .menu-toggle {
+        display: block;
+      }
+
+      nav ul.open {
+        display: flex;
+      }
+
+      nav a {
+        padding: 1rem;
+        font-size: 1.2rem;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
     <nav>
       <div class="logo-title">
         <img src="assets/E-J Logo groß.png" alt="E-J Workspace Logo" class="logo floating-logo" />
+      </div>
+      <div class="menu-toggle" onclick="toggleMenu()">
+        &#9776; <!-- Hamburger Icon -->
       </div>
       <ul>
         <li><a href="projekte.html">Projekte</a></li>
@@ -95,12 +140,10 @@
   </a>
 </footer>
   <script>
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('nav ul');
-
-    menuToggle.addEventListener('click', () => {
+    function toggleMenu() {
+      const navLinks = document.querySelector('nav ul');
       navLinks.classList.toggle('open');
-    });
+    }
 
     const logoTitle = document.querySelector('.logo-title');
     logoTitle.style.cursor = 'pointer';
