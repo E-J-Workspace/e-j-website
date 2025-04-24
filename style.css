@@ -131,7 +131,7 @@ section.visible {
 
 #hero {
   max-width: 480px;
-  margin: 4rem auto 6rem; /* Erhöht den unteren Abstand */
+  margin: 6rem auto 6rem; /* Erhöht den Abstand oben */
   padding: 2rem 1.5rem;
   background-color: #111;
   color: #fff;
@@ -214,13 +214,13 @@ footer {
   color: #333;
   font-size: 0.9rem;
   text-align: center;
-  padding: 0.5rem 0; /* Verringert das Padding, damit der Footer nur so groß wie notwendig ist */
+  padding: 0.5rem 0;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
-  flex-direction: column;
+  gap: 2rem; /* Fügt Abstand zwischen den Icons hinzu */
+  flex-direction: row; /* Bilder nebeneinander */
   margin-top: 10rem;
 }
 
@@ -402,7 +402,7 @@ footer:hover {
 
 footer a img {
   height: 40px;
-  margin-bottom: 0.5rem;
+  cursor: pointer;
   transition: transform 0.2s ease;
 }
 
@@ -486,34 +486,4 @@ p {
 }
 .tab.janosch h3 {
   color: #EE8432;
-}
-
-@keyframes explode {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  25% {
-    transform: scale(1.2);
-    opacity: 0.9;
-  }
-  50% {
-    transform: scale(1.5);
-    opacity: 0.7;
-  }
-  75% {
-    transform: scale(1.8);
-    opacity: 0.5;
-  }
-  100% {
-    transform: scale(2);
-    opacity: 0;
-  }
-}
-
-#footer-text.exploding {
-  animation: explode 1s ease-in-out forwards;
-  color: #FF6347;
-  cursor: pointer;
-  text-decoration: underline;
 }
