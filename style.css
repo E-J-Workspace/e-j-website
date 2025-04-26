@@ -255,6 +255,7 @@ footer:hover {
     right: 1rem;
     top: 50%;
     transform: translateY(-50%);
+    z-index: 1001; /* Ensure the hamburger is always clickable */
   }
 
   nav ul {
@@ -281,6 +282,33 @@ footer:hover {
     width: 100%;
     text-align: center;
     padding: 0.8rem;
+  }
+
+  /* Adjust team-time positioning for mobile */
+  #team-time {
+    position: fixed; /* Change to fixed */
+    top: auto; /* Remove top positioning */
+    bottom: 1rem; /* Position at bottom */
+    right: 1rem;
+    z-index: 999; /* Below the menu but above other content */
+  }
+
+  /* Stack team time tabs vertically on mobile */
+  .tabs {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .tab {
+    background: rgba(255, 255, 255, 0.9); /* More opaque background */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  /* When menu is open, adjust team-time visibility */
+  nav ul.open ~ #team-time {
+    opacity: 0.3; /* Make it less prominent when menu is open */
+    transition: opacity 0.3s ease;
   }
 
   section {
