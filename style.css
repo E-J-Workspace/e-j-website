@@ -29,15 +29,18 @@ header {
   width: fit-content;
   border-radius: 16px;
   max-width: 100%;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   margin-bottom: 2rem;
-  margin-top: 1rem; /* Fügt mehr Abstand oben hinzu */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 1rem;
+  position: relative;
+  /* Immer den größeren Schatten haben, aber transparent */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0);
+  transition: transform 0.3s ease, box-shadow-color 0.3s ease;
 }
 
-header:hover {
-  transform: translateY(-4px); /* Kleine Bewegung nach oben */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Verstärkter Schatten beim Hover */
+/* Hover nur wenn direkt über header, nicht über Kinder */
+header:hover:not(:has(*:hover)) {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 nav {
@@ -48,7 +51,7 @@ nav {
   margin: auto;
   padding: 0 1rem;
   flex-wrap: nowrap;
-  gap: 1rem; /* Der Abstand zwischen den Elementen */
+  gap: 1rem;
 }
 
 /* Logo and Title Styling */
@@ -509,6 +512,12 @@ footer:hover {
   border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tab:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
 .tab h3 {
@@ -702,4 +711,24 @@ p {
 #projects {
   display: block;
   opacity: 1;
+}
+
+/* Button Style */
+a.button {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  color: #fff;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background 0.4s ease-in-out, transform 0.3s ease;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.2), 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+a.button:hover {
+  background: linear-gradient(135deg, var(--color-accent), var(--color-primary));
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
