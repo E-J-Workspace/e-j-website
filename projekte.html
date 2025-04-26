@@ -12,10 +12,13 @@
     <nav>
       <a href="index.html" style="text-decoration: none;">
         <div class="logo-title">
-          <img src="assets/E-J Logo groß.png" alt="E-J Workspace Logo" class="logo" />
+          <img src="assets/E-J Logo groß.png" alt="E-J Workspace Logo" class="logo floating-logo" />
           <span class="site-title">E-J Workspace</span>
         </div>
       </a>
+      <div class="menu-toggle" onclick="toggleMenu()">
+        &#9776;
+      </div>
       <ul>
         <li><a href="index.html">Home</a></li>
       </ul>
@@ -23,21 +26,35 @@
   </header>
 
   <main>
-    <section id="projects">
-      <h2 style="text-align: left;">🚀 Projekte</h3>
-      <!-- Website Building Projekt ohne Bild -->
-      <div class="project" style="margin-bottom: 2rem;">
-        <h3>Website Building</h3>
-        <p>Websites für Kunden bauen.</p>
-      </div>
-      <!-- Studi-Community Projekt mit animiertem Bild rechts -->
-      <div class="project" style="display: flex; justify-content: space-between; align-items: center;">
-        <div style="flex: 1;">
-          <h3>Studi-Community</h3>
-          <p>Reddit & Discord Community.</p>
-          <p>Erstellung und Verkauf von Notion Templates.</p>
+    <section id="projects" class="reveal">
+      <h2 style="text-align: left;">🚀 Projekte</h2>
+      <!-- Website Building Projekt -->
+      <div class="project reveal" style="margin-bottom: 2rem;">
+        <div class="project-content">
+          <h3>Website Building</h3>
+          <p>Websites für Kunden bauen.</p>
+          <div class="project-tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+          </div>
         </div>
-        <img src="assets/Studium Logo animiert.gif" alt="Studi-Community Logo" style="width: 250px; height: auto; margin-left: 20px;" />
+      </div>
+      <!-- Studi-Community Projekt -->
+      <div class="project reveal">
+        <div class="project-content">
+          <div style="flex: 1;">
+            <h3>Studi-Community</h3>
+            <p>Reddit & Discord Community.</p>
+            <p>Erstellung und Verkauf von Notion Templates.</p>
+            <div class="project-tags">
+              <span class="tag">Community</span>
+              <span class="tag">Notion</span>
+              <span class="tag">Discord</span>
+            </div>
+          </div>
+          <img src="assets/Studium Logo animiert.gif" alt="Studi-Community Logo" class="project-image" />
+        </div>
       </div>
     </section>
   </main>
@@ -48,5 +65,27 @@
       <img src="assets/discord-logo.png" alt="Discord" style="height: 28px; cursor: pointer;" />
     </a>
   </footer>
+
+  <script>
+    // Menu Toggle Function
+    function toggleMenu() {
+      const navLinks = document.querySelector('nav ul');
+      navLinks.classList.toggle('open');
+    }
+
+    // Reveal Animation
+    const sections = document.querySelectorAll('.reveal');
+    const revealOnScroll = () => {
+      const triggerBottom = window.innerHeight * 0.85;
+      sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        if (sectionTop < triggerBottom) {
+          section.classList.add('visible');
+        }
+      });
+    };
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+  </script>
 </body>
 </html>

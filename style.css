@@ -174,39 +174,112 @@ section.visible {
   color: #ccc;
 }
 
-/* Vereinheitlichter Card-Style wie #team-time */
-.project,
-.tab {
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  padding: 1rem;
+/* Project Styles */
+.project {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
 }
 
-.project:hover,
-.tab:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+.project:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
 }
 
-a.button {
-  display: inline-block;
-  padding: 0.8rem 1.5rem;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
-  color: #fff;
+.project-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.project-image {
+  width: 250px;
+  height: auto;
   border-radius: 12px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1rem;
-  transition: background 0.4s ease-in-out, transform 0.3s ease;
-  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.2), 0 4px 14px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
-a.button:hover {
-  background: linear-gradient(135deg, var(--color-accent), var(--color-primary));
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+.project:hover .project-image {
+  transform: scale(1.05);
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.tag {
+  background: rgba(238, 124, 54, 0.1);
+  color: var(--color-accent);
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.tag:hover {
+  background: rgba(238, 124, 54, 0.2);
+}
+
+/* Mobile Styles for Projects */
+@media (max-width: 768px) {
+  .project {
+    padding: 1.5rem;
+  }
+
+  .project-content {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .project-image {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .project-tags {
+    justify-content: center;
+  }
+
+  .tag {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
+  }
+}
+
+/* Improved Loading Animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Improved hover effects */
+a:not(.button):hover {
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
 }
 
 footer {
