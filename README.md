@@ -4,8 +4,8 @@
 - Time-Abzeige
 - Projekt-Übersicht
 - Links zu:
--   Watch Together
--   Call-Themen
+ - Watch Together
+ - Call-Themen
 
 ## Technologie
 - HTML5
