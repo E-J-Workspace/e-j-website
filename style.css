@@ -230,6 +230,20 @@ footer:hover {
 }
 
 @media (max-width: 768px) {
+  body {
+    padding: 0 0.5rem;
+  }
+
+  header {
+    margin: 0.5rem auto 1rem;
+    width: calc(100% - 1rem);
+  }
+
+  nav {
+    padding: 0 0.5rem;
+    position: relative;
+  }
+
   .menu-toggle {
     display: block;
     font-size: 2rem;
@@ -237,6 +251,10 @@ footer:hover {
     border: none;
     color: #333;
     cursor: pointer;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   nav ul {
@@ -245,11 +263,13 @@ footer:hover {
     flex-direction: column;
     gap: 0.5rem;
     background-color: #FFFFEC;
-    padding: 1rem 0;
+    padding: 1rem;
     position: absolute;
-    top: 50px;
+    top: 100%;
     left: 0;
-    z-index: 100;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 16px 16px;
   }
 
   nav ul.open {
@@ -257,69 +277,74 @@ footer:hover {
   }
 
   nav a {
-    padding: 1rem 1.5rem;
-    font-size: 1.1rem;
-    color: #333;
-    text-align: center;
-  }
-
-  nav ul li {
+    display: block;
     width: 100%;
-  }
-
-  /* Hero image adjustments for mobile */
-  #hero {
-    max-width: 90%;
-    margin-top: 4rem;
-    padding: 1.5rem;
-    font-size: 1.1rem;
-  }
-
-  /* Adjust text size in hero */
-  #hero h2 {
-    font-size: 1.6rem;
-  }
-
-  #hero p {
-    font-size: 1rem;
-  }
-
-  /* Make section padding smaller on mobile */
-  section {
-    padding: 4rem 1rem;
-  }
-
-  footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 5rem;
-  }
-
-  footer a img {
-    height: 35px;
-  }
-
-  /* Adjust tabs for mobile */
-  .tab {
+    text-align: center;
     padding: 0.8rem;
   }
 
-  /* Stack elements in the team-time section */
-  #team-time {
-    position: relative;
+  section {
+    padding: 2rem 1rem;
+    margin: 0 auto 3rem;
+  }
+
+  #hero {
+    margin: 2rem auto;
+    padding: 2rem 1rem;
+  }
+
+  .hero-content img.floating-logo {
+    max-width: 120px;
+  }
+
+  .hero-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 0 -1rem;
+    padding: 0 1rem;
+  }
+
+  .table-wrapper table {
+    min-width: 600px;
+  }
+
+  .tabs {
     flex-direction: column;
-    align-items: flex-start;
     gap: 1rem;
   }
 
-  /* Ensure the tabs don't overlap or overflow */
-  .tabs {
-    display: flex;
+  .tab {
+    width: 100%;
+  }
+
+  footer {
     flex-direction: column;
     gap: 1rem;
-    align-items: flex-start;
+    padding: 1rem;
+    margin-top: 5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h2 {
+    font-size: 1.3rem;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+
+  a.button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .logo {
+    height: 36px;
   }
 }
 
