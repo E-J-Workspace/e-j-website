@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projekte – E-J</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="assets/Favicon.png" />
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html" style="text-decoration: none; display: flex; align-items: center; gap: 1rem;">
+        <div class="logo-title">
+          <img src="assets/E-J Logo groß.png" alt="E-J Workspace Logo" class="logo floating-logo" />
+          <span style="color: #000; font-size: 1.5rem; font-weight: bold;">E-J</span>
+        </div>
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="old-projects" class="reveal">
+      <h2 style="font-size: 2.2rem; margin-bottom: 2.5rem; text-align: left; color: #000; display: flex; align-items: center; gap: 1rem;">
+        <span class="status-light" style="display: inline-block; width: 12px; height: 12px; border-radius: 50%; background-color: #ccc; transition: background-color 0.3s ease;"></span>
+        Project History
+      </h2>
+      
+      <div class="project" style="background: rgba(255, 255, 255, 0.8); border-radius: 16px; padding: 2rem; margin-bottom: 2rem; box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);">
+        <div class="project-content" style="display: flex; gap: 2rem;">
+          <div style="flex: 1;">
+            <h3 style="font-size: 1.6rem; margin-bottom: 1rem; color: #000;">Studi-Community</h3>
+            <p style="color: #555; margin-bottom: 1.5rem;">Reddit & Discord Community.</p>
+            <p style="color: #555; margin-bottom: 1.5rem;">Erstellung und Verkauf von Notion Templates.</p>
+            <div class="project-tags" style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+              <span class="tag" style="background: rgba(238, 124, 54, 0.1); color: #EE7C36; padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.9rem;">Community</span>
+              <span class="tag" style="background: rgba(238, 124, 54, 0.1); color: #EE7C36; padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.9rem;">Notion</span>
+              <span class="tag" style="background: rgba(238, 124, 54, 0.1); color: #EE7C36; padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.9rem;">Discord</span>
+            </div>
+          </div>
+          <img src="assets/Studium Logo animiert.gif" alt="Studi-Community Logo" class="project-image" style="object-fit: contain; height: 150px; width: auto;" />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 E-J Workspace</p>
+    <a href="https://discord.gg/PpbYWbmY" target="_blank" rel="noopener" aria-label="Join us on Discord">
+      <img src="assets/discord-logo.png" alt="Discord" style="height: 28px; cursor: pointer;" />
+    </a>
+  </footer>
+
+  <script>
+    // Menu Toggle Function
+    function toggleMenu() {
+      const navLinks = document.querySelector('nav ul');
+      navLinks.classList.toggle('open');
+    }
+
+    // Reveal Animation
+    const sections = document.querySelectorAll('section');
+    const revealOnScroll = () => {
+      const triggerBottom = window.innerHeight * 0.85;
+
+      sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+
+        if (sectionTop < triggerBottom) {
+          section.classList.add('visible');
+          // Change status light color when section becomes visible
+          if (section.id === 'old-projects') {
+            const statusLight = section.querySelector('.status-light');
+            if (statusLight) {
+              statusLight.style.backgroundColor = '#ff4444';
+            }
+          }
+        }
+      });
+    };
+
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+  </script>
+</body>
+</html>

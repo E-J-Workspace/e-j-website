@@ -22,6 +22,13 @@
 
     /* Auf mobilen Geräten wird das Menü verborgen */
     @media (max-width: 768px) {
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 1rem;
+      }
+
       nav ul {
         display: none;
         flex-direction: column;
@@ -33,7 +40,6 @@
         padding: 1rem;
       }
 
-      /* Menu toggle wird angezeigt auf mobilen Geräten */
       .menu-toggle {
         display: block;
       }
@@ -46,6 +52,26 @@
         padding: 1rem;
         font-size: 1.2rem;
         text-align: center;
+      }
+
+      #team-time {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: transparent;
+        z-index: 100;
+      }
+
+      .tabs {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .tab {
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 8px;
+        padding: 0.5rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       }
     }
   </style>
@@ -60,8 +86,9 @@
         &#9776;
       </div>
       <ul>
-        <li><a href="projekte.html">Projekte</a></li>
-        <li><a href="https://sync-tube.de/" target="_blank" rel="noopener">Watch Together</a></li>
+        <li><a href="alte-projekte.html">Project History</a></li>
+        <li><a href="https://www.notion.so/v-2-0-0-1495ac471a0b81fdb2b5e8797a7684cd?pvs=4" target="_blank" rel="noopener">System</a></li>
+        <li><a href="https://github.com/E-J-Workspace" target="_blank" rel="noopener">Github</a></li>
       </ul>
     </nav>
   </header>
@@ -70,52 +97,48 @@
     <div class="hero-content">
       <div style="position: relative; display: inline-block;">
         <img src="assets/E-J Logo groß rounded.png" alt="E-J Workspace Logo Rounded" class="floating-logo" />
-        <a href="https://discord.com/channels/1156253962945699850/1360190312303296593" class="notification-dot" target="_blank" rel="noopener"></a>
+        <a href="https://discord.com/channels/1156253962945699850/1360190329361272872" class="notification-dot" target="_blank" rel="noopener"></a>
       </div>
       <h2 style="color: #dcdac0;">E-J</h2>
       <p>"Build > Talk."</p>
-      <a href="https://app.clickup.com/90151074764/v/cn/7-90151074764-8" class="button" target="_blank" rel="noopener">Workspace öffnen</a>
+      <a href="https://app.clickup.com/90151074764/v/cn/7-90151074764-8" class="button" target="_blank" rel="noopener">Open Workspace</a>
     </div>
   </section>
 
-
-  <section id="challenges" class="reveal" style="background-color: #F5EDD6; position: relative;">
-    <h2 style="text-align: left;">🎯 Monthly Challenges</h2>
-    <div class="table-wrapper">
-      <table>
-        <thead>
-          <tr>
-            <th style="font-weight: bold;">Challenge</th>
-            <th>Beschreibung</th>
-            <th>Start</th>
-            <th style="font-weight: bold;">→Ende</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td style="font-weight: bold;">#availability-channel</td>
-            <td>Calls besser organisiert bekommen indem man bei Discord reinschreibt, wann man Zeit hat.</td>
-            <td>15.04.</td>
-            <td style="font-weight: bold;">30.04.</td>
-          </tr>
-          <tr>
-            <td style="font-weight: bold;">Clickup</td>
-            <td>Neuer Workspace nur für Work und Projekte.</td>
-            <td>15.04.</td>
-            <td style="font-weight: bold;">30.04.</td>
-          </tr>
-          <tr>
-            <td style="font-weight: bold;">9 pm sleep</td>
-            <td>Zwei Wochen jeden Tag um 21 Uhr ins Bett.</td>
-            <td>21.04.</td>
-            <td style="font-weight: bold;">06.05.</td>
-          </tr>
-        </tbody>
-      </table>
+  <section id="current-projects" class="reveal" style="background: rgba(255, 255, 255, 0.6); padding: 2rem; border-radius: 20px; margin-top: 4rem;">
+    <h2 style="font-size: 2.2rem; margin-bottom: 2.5rem; text-align: left; color: #000; display: flex; align-items: center; gap: 1rem;">
+      <span class="status-light" style="display: inline-block; width: 12px; height: 12px; border-radius: 50%; background-color: #ccc; transition: background-color 0.3s ease;"></span>
+      Current Projects
+    </h2>
+    
+    <div class="project" style="background: rgba(255, 255, 255, 0.8); border-radius: 16px; padding: 2rem; margin-bottom: 2rem; box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);">
+      <div class="project-content" style="display: flex; gap: 2rem;">
+        <div style="flex: 1;">
+          <h3 style="font-size: 1.6rem; margin-bottom: 1rem; color: #000;">Pixelbau</h3>
+          <p style="color: #555; margin-bottom: 1.5rem;">Website Agentur aufbauen.</p>
+          <div class="project-tags" style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+            <span class="tag" style="background: rgba(238, 124, 54, 0.1); color: #EE7C36; padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.9rem;">Business</span>
+            <span class="tag" style="background: rgba(238, 124, 54, 0.1); color: #EE7C36; padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.9rem;">Web Development</span>
+            <span class="tag" style="background: rgba(238, 124, 54, 0.1); color: #EE7C36; padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.9rem;">Agency</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-
+  <section id="newsroom" class="reveal">
+    <h2>📰 Newsroom</h2>
+    <div class="blog-grid">
+      <article class="blog-post">
+        <div class="blog-content">
+          <h3>E-J System 2.0.0 Update</h3>
+          <p class="blog-date">06. Mai 2025</p>
+          <p>Implementierung eines Wikis in Notion mit klarem Überblick. Unterscheidung Work und Casual.</p>
+          <a href="https://www.notion.so/v-2-0-0-1495ac471a0b81fdb2b5e8797a7684cd?pvs=4#1d65ac471a0b80e19429f2df6f1e6f14" class="read-more" target="_blank" rel="noopener">Read more</a>
+        </div>
+      </article>
+    </div>
+  </section>
 
   <section id="team-time" class="reveal">
     <div class="tabs">
@@ -183,6 +206,12 @@
 
         if (sectionTop < triggerBottom) {
           section.classList.add('visible');
+          if (section.id === 'current-projects') {
+            const statusLight = section.querySelector('.status-light');
+            if (statusLight) {
+              statusLight.style.backgroundColor = '#4CAF50';
+            }
+          }
         }
       });
     };
